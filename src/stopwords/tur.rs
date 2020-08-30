@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Türkçe (Turkish)
 pub static STOPWORDS_TUR: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "acaba",
         "acep",
         "adamakıllı",
@@ -509,6 +509,7 @@ pub static STOPWORDS_TUR: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "ţu",
         "ţöyle",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

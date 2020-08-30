@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// ភាសាខ្មែរ (Khmer)
 pub static STOPWORDS_KHM: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "កញ្ញា",
         "កន្លែង",
         "កម",
@@ -240,6 +240,7 @@ pub static STOPWORDS_KHM: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "៨",
         "៩",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

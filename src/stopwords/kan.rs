@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// ಕನ್ನಡ (Kannada)
 pub static STOPWORDS_KAN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "ಅಂತ",
         "ಅಥವಾ",
         "ಅದಕ್ಕೆ",
@@ -87,6 +87,7 @@ pub static STOPWORDS_KAN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "ಹೇಳಿ",
         "ಹೊಸ",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

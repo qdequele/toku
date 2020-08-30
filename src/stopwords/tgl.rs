@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Tagalog (Tagalog)
 pub static STOPWORDS_TGL: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "akin",
         "aking",
         "ako",
@@ -152,6 +152,7 @@ pub static STOPWORDS_TGL: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "una",
         "walang",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

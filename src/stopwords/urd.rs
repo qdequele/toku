@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// اُردُو (Urdu)
 pub static STOPWORDS_URD: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "آئی",
         "آئے",
         "آج",
@@ -522,6 +522,7 @@ pub static STOPWORDS_URD: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "یہ",
         "یہبں",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

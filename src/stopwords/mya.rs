@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// မြန်မာစာ (Burmese)
 pub static STOPWORDS_MYA: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "ကိုယ်စီ",
         "ကိုယ်စီကိုယ်ငှ",
         "ကိုယ်တိုင်",
@@ -272,6 +272,7 @@ pub static STOPWORDS_MYA: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "၄င်းအရာ",
         "၍",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

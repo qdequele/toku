@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// 普通话 (Mandarin)
 pub static STOPWORDS_CMN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "、",
         "。",
         "〈",
@@ -1080,6 +1080,7 @@ pub static STOPWORDS_CMN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "騰",
         "麼",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Yorùbá (Yoruba)
 pub static STOPWORDS_YOR: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "a",
         "an",
         "bá",
@@ -65,6 +65,7 @@ pub static STOPWORDS_YOR: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "ọjọ́",
         "ọ̀pọ̀lọpọ̀",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

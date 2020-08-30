@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// हिन्दी (Hindi)
 pub static STOPWORDS_HIN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "अंदर",
         "अत",
         "अदि",
@@ -230,6 +230,7 @@ pub static STOPWORDS_HIN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "होना",
         "होने",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

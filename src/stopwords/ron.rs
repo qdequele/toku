@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Română (Romanian)
 pub static STOPWORDS_RON: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "a",
         "abia",
         "acea",
@@ -439,6 +439,7 @@ pub static STOPWORDS_RON: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "ţi",
         "ţie",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

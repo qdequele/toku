@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Latviešu (Latvian)
 pub static STOPWORDS_LAV: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "aiz",
         "ap",
         "apakš",
@@ -166,6 +166,7 @@ pub static STOPWORDS_LAV: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "ārpus",
         "šaipus",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

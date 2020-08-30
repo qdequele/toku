@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// 한국어 (Korean)
 pub static STOPWORDS_KOR: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "〈",
         "〉",
         "《",
@@ -604,6 +604,7 @@ pub static STOPWORDS_KOR: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "흥",
         "힘입어",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

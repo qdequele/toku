@@ -3,4 +3,4 @@ use std::collections::HashSet;
 
 /// Беларуская (Belarusian) - Not Yet Implemented
 pub static STOPWORDS_BEL: Lazy<HashSet<&'static str>> =
-    Lazy::new(|| vec![""].into_iter().collect());
+    Lazy::new(|| [""].iter().cloned().collect());

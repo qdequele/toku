@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Ελληνικά (Greek)
 pub static STOPWORDS_ELL: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "αλλα",
         "αν",
         "αντι",
@@ -270,6 +270,7 @@ pub static STOPWORDS_ELL: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "ὦ",
         "ᾧ",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

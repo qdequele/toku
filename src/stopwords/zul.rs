@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// IsiZulu (Zulu)
 pub static STOPWORDS_ZUL: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "futhi",
         "kahle",
         "kakhulu",
@@ -34,6 +34,7 @@ pub static STOPWORDS_ZUL: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "zakhe",
         "zonke",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

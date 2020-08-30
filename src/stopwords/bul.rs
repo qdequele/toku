@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Български (Bulgarian)
 pub static STOPWORDS_BUL: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "ð°",
         "ð°ð²ñ‚ðµð½ñ‚ð¸ñ‡ðµð½",
         "ð°ð·",
@@ -523,6 +523,7 @@ pub static STOPWORDS_BUL: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "я",
         "як",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

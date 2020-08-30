@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Suomi (Finnish)
 pub static STOPWORDS_FIN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "aiemmin",
         "aika",
         "aikaa",
@@ -852,6 +852,7 @@ pub static STOPWORDS_FIN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "älköön",
         "älä",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

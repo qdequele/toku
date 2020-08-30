@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Bahasa Indonesia (Indonesian)
 pub static STOPWORDS_IND: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "ada",
         "adalah",
         "adanya",
@@ -763,6 +763,7 @@ pub static STOPWORDS_IND: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "yakni",
         "yang",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Français (French)
 pub static STOPWORDS_FRA: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "a",
         "abord",
         "absolument",
@@ -611,6 +611,7 @@ pub static STOPWORDS_FRA: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "être",
         "ô",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

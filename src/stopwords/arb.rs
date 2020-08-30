@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// العربية (Arabic)
 pub static STOPWORDS_ARB: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "،",
         "آض",
         "آمينَ",
@@ -485,6 +485,7 @@ pub static STOPWORDS_ARB: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "يوم",
         "ّأيّان",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

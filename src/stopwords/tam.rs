@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// தமிழ் (Tamil)
 pub static STOPWORDS_TAM: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "அங்கு",
         "அங்கே",
         "அடுத்த",
@@ -130,6 +130,7 @@ pub static STOPWORDS_TAM: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "வேண்டும்",
         "வேறு",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

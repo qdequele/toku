@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// ਪੰਜਾਬੀ (Punjabi)
 pub static STOPWORDS_PAN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "ਅਕਤੂਬਰ",
         "ਅਕਸਰ",
         "ਅਗਸਤ",
@@ -456,6 +456,7 @@ pub static STOPWORDS_PAN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "ਹੋਰ",
         "ਹੋਵੇ",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

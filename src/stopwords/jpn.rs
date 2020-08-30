@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// 日本語 (Japanese)
 pub static STOPWORDS_JPN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "あそこ",
         "あっ",
         "あの",
@@ -139,6 +139,7 @@ pub static STOPWORDS_JPN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "貴方",
         "貴方方",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

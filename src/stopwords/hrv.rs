@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Hrvatski (Croatian)
 pub static STOPWORDS_HRV: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "a", "ako", "ali", "bi", "bih", "bila", "bili", "bilo", "bio", "bismo", "biste", "biti",
         "bumo", "da", "do", "duž", "ga", "hoće", "hoćemo", "hoćete", "hoćeš", "hoću", "i", "iako",
         "ih", "ili", "iz", "ja", "je", "jedna", "jedne", "jedno", "jer", "jesam", "jesi", "jesmo",
@@ -21,6 +21,7 @@ pub static STOPWORDS_HRV: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "u", "uz", "vam", "vama", "vas", "vaš", "vaša", "vaše", "već", "vi", "vrlo", "za", "zar",
         "će", "ćemo", "ćete", "ćeš", "ću", "što",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

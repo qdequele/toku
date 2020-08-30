@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Esperanto (Esperanto)
 pub static STOPWORDS_EPO: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "adiaŭ",
         "ajn",
         "al",
@@ -178,6 +178,7 @@ pub static STOPWORDS_EPO: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "ŝia",
         "ŝin",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

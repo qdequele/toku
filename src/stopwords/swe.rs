@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Svenska (Swedish)
 pub static STOPWORDS_SWE: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "aderton",
         "adertonde",
         "adjö",
@@ -423,6 +423,7 @@ pub static STOPWORDS_SWE: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "överst",
         "övre",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

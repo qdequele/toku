@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Azərbaycanca (Azerbaijani)
 pub static STOPWORDS_AZJ: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "a",
         "ad",
         "altmış",
@@ -170,6 +170,7 @@ pub static STOPWORDS_AZJ: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "ən",
         "əslində",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

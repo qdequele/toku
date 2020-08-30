@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// ภาษาไทย (Thai)
 pub static STOPWORDS_THA: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "กล่าว",
         "กว่า",
         "กัน",
@@ -120,6 +120,7 @@ pub static STOPWORDS_THA: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "ไม่",
         "ไว้",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

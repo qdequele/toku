@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Soomaaliga (Somali)
 pub static STOPWORDS_SOM: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "aad",
         "albaabkii",
         "atabo",
@@ -35,6 +35,7 @@ pub static STOPWORDS_SOM: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "waxa",
         "waxuu",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

@@ -188,7 +188,7 @@ impl StopWords {
     }
 
     pub fn detect_lang(text: &str, script: Script) -> Option<Lang> {
-        let script_langs = script_langs(script);
+        let script_langs = crate::script_to_langs(script);
 
         let mut count = 0;
         let mut lang = None;
@@ -308,93 +308,5 @@ impl StopWords {
             Lang::Yor => &*STOPWORDS_YOR,
             Lang::Zul => &*STOPWORDS_ZUL,
         }
-    }
-}
-
-fn script_langs(script: Script) -> &'static [Lang] {
-    match script {
-        Script::Latin => &[
-            Lang::Spa,
-            Lang::Eng,
-            Lang::Por,
-            Lang::Ind,
-            Lang::Fra,
-            Lang::Deu,
-            Lang::Jav,
-            Lang::Vie,
-            Lang::Ita,
-            Lang::Tur,
-            Lang::Pol,
-            Lang::Orm,
-            Lang::Ron,
-            Lang::Hau,
-            Lang::Hrv,
-            Lang::Nld,
-            Lang::Kur,
-            Lang::Yor,
-            Lang::Uzb,
-            Lang::Ibo,
-            Lang::Ceb,
-            Lang::Tgl,
-            Lang::Hun,
-            Lang::Azj,
-            Lang::Ces,
-            Lang::Mlg,
-            Lang::Nya,
-            Lang::Kin,
-            Lang::Zul,
-            Lang::Swe,
-            Lang::Som,
-            Lang::Ilo,
-            Lang::Uig,
-            Lang::Hat,
-            Lang::Aka,
-            Lang::Sna,
-            Lang::Afr,
-            Lang::Fin,
-            Lang::Run,
-            Lang::Tuk,
-            Lang::Dan,
-            Lang::Nob,
-            Lang::Nno,
-            Lang::Lit,
-            Lang::Slv,
-            Lang::Epo,
-            Lang::Lav,
-            Lang::Est,
-            Lang::Lat,
-            Lang::Slk,
-        ],
-        Script::Cyrillic => &[
-            Lang::Rus,
-            Lang::Ukr,
-            Lang::Srp,
-            Lang::Azj,
-            Lang::Bel,
-            Lang::Bul,
-            Lang::Tuk,
-            Lang::Mkd,
-        ],
-        Script::Arabic => &[Lang::Arb, Lang::Urd, Lang::Skr, Lang::Uig, Lang::Pes],
-        Script::Devanagari => &[Lang::Hin, Lang::Mar, Lang::Mai, Lang::Bho, Lang::Nep],
-        Script::Ethiopic => &[Lang::Amh, Lang::Tir],
-        Script::Hebrew => &[Lang::Heb, Lang::Ydd],
-        Script::Mandarin => &[Lang::Cmn],
-        Script::Bengali => &[Lang::Ben],
-        Script::Hangul => &[Lang::Kor],
-        Script::Georgian => &[Lang::Kat],
-        Script::Greek => &[Lang::Ell],
-        Script::Kannada => &[Lang::Kan],
-        Script::Tamil => &[Lang::Tam],
-        Script::Thai => &[Lang::Tha],
-        Script::Gujarati => &[Lang::Guj],
-        Script::Gurmukhi => &[Lang::Pan],
-        Script::Telugu => &[Lang::Tel],
-        Script::Malayalam => &[Lang::Mal],
-        Script::Oriya => &[Lang::Ori],
-        Script::Myanmar => &[Lang::Mya],
-        Script::Sinhala => &[Lang::Sin],
-        Script::Khmer => &[Lang::Khm],
-        Script::Katakana | Script::Hiragana => &[Lang::Jpn],
     }
 }

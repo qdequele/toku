@@ -3,4 +3,4 @@ use std::collections::HashSet;
 
 /// Akan (Akan) - Not Yet Implemented
 pub static STOPWORDS_AKA: Lazy<HashSet<&'static str>> =
-    Lazy::new(|| vec![""].into_iter().collect());
+    Lazy::new(|| [""].iter().cloned().collect());

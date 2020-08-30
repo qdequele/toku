@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// ייִדיש (Yiddish)
 pub static STOPWORDS_YDD: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "אבל",
         "או",
         "אולי",
@@ -199,6 +199,7 @@ pub static STOPWORDS_YDD: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "תהיה",
         "תחת",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

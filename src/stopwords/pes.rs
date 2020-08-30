@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// فارسی (Persian)
 pub static STOPWORDS_PES: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "آباد",
         "آره",
         "آری",
@@ -796,6 +796,7 @@ pub static STOPWORDS_PES: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "۸",
         "۹",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

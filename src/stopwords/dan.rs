@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Dansk (Danish)
 pub static STOPWORDS_DAN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "ad", "af", "aldrig", "alle", "alt", "anden", "andet", "andre", "at", "bare", "begge",
         "blev", "blive", "bliver", "da", "de", "dem", "den", "denne", "der", "deres", "det",
         "dette", "dig", "din", "dine", "disse", "dit", "dog", "du", "efter", "ej", "eller", "en",
@@ -20,6 +20,7 @@ pub static STOPWORDS_DAN: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "store", "syv", "så", "sådan", "tag", "tage", "thi", "ti", "til", "to", "tre", "ud",
         "under", "var", "ved", "vi", "vil", "ville", "vor", "vores", "være", "været",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });

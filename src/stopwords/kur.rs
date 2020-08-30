@@ -3,7 +3,7 @@ use std::collections::HashSet;
 
 /// Kurdî (Kurdish)
 pub static STOPWORDS_KUR: Lazy<HashSet<&'static str>> = Lazy::new(|| {
-    vec![
+    [
         "ئێمە",
         "ئێوە",
         "ئەم",
@@ -67,6 +67,7 @@ pub static STOPWORDS_KUR: Lazy<HashSet<&'static str>> = Lazy::new(|| {
         "کە",
         "ی",
     ]
-    .into_iter()
+    .iter()
+    .cloned()
     .collect()
 });
