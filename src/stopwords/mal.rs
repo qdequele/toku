@@ -2,5 +2,4 @@ use once_cell::sync::Lazy;
 use std::collections::HashSet;
 
 /// മലയാളം (Malayalam) - Not Yet Implemented
-pub static STOPWORDS_MAL: Lazy<HashSet<&'static str>> =
-    Lazy::new(|| [""].iter().cloned().collect());
+pub static STOPWORDS_MAL: Lazy<HashSet<&'static str>> = Lazy::new(HashSet::new);
