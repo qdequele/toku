@@ -6,7 +6,7 @@ use std::collections::HashSet;
 use std::str::FromStr;
 // use tokenizers::models::bpe::BPE;
 // use tokenizers::tokenizer::{EncodeInput, Result, Tokenizer};
-use deunicode::deunicode;
+// use deunicode::deunicode;
 use unicode_segmentation::UnicodeSegmentation;
 use whatlang::{Lang, Script};
 
@@ -240,8 +240,8 @@ impl TokenizerBuilder {
         };
 
         Tokenizer {
-            lowercased: self.lowercased,
-            unicode: self.unicode,
+            // lowercased: self.lowercased,
+            // unicode: self.unicode,
             stop_words: stopwords,
             words,
         }
@@ -328,8 +328,8 @@ pub enum TokenType {
 }
 
 pub struct Tokenizer<'a> {
-    lowercased: bool,
-    unicode: bool,
+    // lowercased: bool,
+    // unicode: bool,
     stop_words: HashSet<String>,
     words: Box<dyn Iterator<Item = &'a str> + 'a>,
 }

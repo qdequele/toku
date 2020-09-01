@@ -31,7 +31,9 @@ fn main() {
 
     let tokenizer = builder.build(&opt.text);
 
-    for token in tokenizer {
-        println!("token: {}", token);
+    for (type_, token) in tokenizer {
+        if type_ == (TokenType::Word { stop_word: false }) {
+            println!("token: {:?}", token);
+        }
     }
 }
