@@ -17,3 +17,8 @@ unicode-linebreak = "0.1.0"
 
 [dev-dependencies]
 structopt = "0.3.17"
+
+[features]
+default = []
+# Use the nightly feature to be able to run benchmarks
+nightly = []

@@ -1,4 +1,4 @@
-#![feature(test)]
+#![cfg_attr(feature = "nightly", feature(test))]
 
 mod stopwords;
 mod tokenizer;
@@ -174,13 +174,5 @@ pub fn lang_to_script(lang: Lang) -> Script {
         Lang::Sin => Script::Sinhala,
         Lang::Khm => Script::Khmer,
         Lang::Jpn => Script::Katakana,
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
     }
 }

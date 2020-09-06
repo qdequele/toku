@@ -1,5 +1,3 @@
-extern crate test;
-
 use jieba_rs::Jieba;
 use once_cell::sync::Lazy;
 use std::collections::HashSet;
@@ -360,8 +358,10 @@ impl<'a> Iterator for Tokenizer<'a> {
     }
 }
 
-#[cfg(test)]
-mod tests {
+#[cfg(all(feature = "nightly", test))]
+mod bench {
+    extern crate test;
+
     use super::*;
     use test::Bencher;
 
